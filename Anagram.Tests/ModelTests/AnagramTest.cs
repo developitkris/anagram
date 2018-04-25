@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Anagrams.Models;
 using System;
-using System.Collectios.Generic;
+using System.Collections.Generic;
 
 namespace Anagrams.Tests
 {
@@ -15,17 +15,26 @@ namespace Anagrams.Tests
 
     [TestMethod]
     //get input marker
-
+    public void GetMarker_MarkerIsInput_True()
+    {
+      AnagramMatch testing1 = new Anagram("a");
+      Assert.AreEqual(true, testing.GetMarker("a"));
+    }
 
     //get an instance of input test word
+    public void GetTestWord_TestIsInput_True()
+    {
+      
+    }
 
+    //compare marker char to test word char -> a match
 
-    //compare marker char to test word char
+    //compare marker char to test word char -> not a match
 
 
 
     [TestMethod]
-    //compare whole words for a true anagram
+    //compare whole words -> anagram
     public void WordCompare_CompareBearBare_True()
     {
     AnagramMatch testing5 = new AnagramMatch("bear");
@@ -33,7 +42,7 @@ namespace Anagrams.Tests
     }
 
     [TestMethod]
-    //compare whole words for a partial anagram
+    //compare whole words -> partial anagram
     public void WordCompare_CompareLossGloss_True()
     {
       AnagramMatch testing6 = new AnagramMatch("loss");
@@ -41,7 +50,7 @@ namespace Anagrams.Tests
     }
 
     [TestMethod]
-    //compare whole words for not an anagram
+    //compare whole words -> not an anagram
     public void WordCompare_CompareMoreLore_False()
     {
       AnagramMatch testing7 = new AnagramMatch("more");
