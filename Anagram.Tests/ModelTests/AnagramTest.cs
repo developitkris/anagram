@@ -14,26 +14,37 @@ namespace Anagrams.Tests
     }
 
     [TestMethod]
-    //true anagram
+    //get input marker
+
+
+    //get an instance of input test word
+
+
+    //compare marker char to test word char
+
+
+
+    [TestMethod]
+    //compare whole words for a true anagram
     public void WordCompare_CompareBearBare_True()
     {
-    AnagramMatch testing = new AnagramMatch("bear");
+    AnagramMatch testing5 = new AnagramMatch("bear");
     Assert.AreEqual(true, testing.CompareWord("bare"));
     }
 
     [TestMethod]
-    //partial anagram
+    //compare whole words for a partial anagram
     public void WordCompare_CompareLossGloss_True()
     {
-      AnagramMatch testing2 = new AnagramMatch("loss");
+      AnagramMatch testing6 = new AnagramMatch("loss");
       Assert.AreEqual(true, testing2.CompareWord("gloss"));
     }
 
     [TestMethod]
-    //not an anagram
+    //compare whole words for not an anagram
     public void WordCompare_CompareMoreLore_False()
     {
-      AnagramMatch testing3 = new AnagramMatch("more");
+      AnagramMatch testing7 = new AnagramMatch("more");
       Assert.AreEqual(false, testing3.CompareWord("lore"));
     }
   }

@@ -1,20 +1,23 @@
 using System;
 using System.Collections.Generic;
 
-namespace Anagrams
+namespace Anagrams.Models
 {
   public class AnagramMatch
   {
     private static _marker;
     private static _otherWords;
-    private static List<string> _wordsToCheck = List<string>{};
-    private static List<string> _anagrams = List<string>{};
-    private static List<string> _not = List<string>{};
+    private static int _id;
+    private static List<string> _userInputs = new List<string>{};
+    private static List<string> _anagrams = new List<string>{};
+    private static List<string> _not = new List<string>{};
 
     public class AnagramMatch(string word1, List otherWords)
     {
       _marker = word1;
       _otherWords = otherWords;
+      _userInputs.Add(this);
+      _id = _otherWords.Count;
     }
     public void SetMarker(string firstWord)
     {
@@ -24,13 +27,16 @@ namespace Anagrams
     {
       return _marker;
     }
-    public void SetAll(List otherWords)
+    public void SetAll(List words)
     {
-      _wordsToCheck = otherWords;
+      foreach (string word in _userInputs)
+        if (word[i] != word[0]){
+          words = _otherWords;
+        }
     }
     public string GetAll()
     {
-      return _wordsToCheck;
+      return _otherWords;
     }
     public void SetAna(List anagrams)
     {
@@ -48,17 +54,28 @@ namespace Anagrams
     {
       return _not;
     }
-    public string CompareWords(string word1, string otherWords, string newWord)
+    public string CompareWords(string marker, List testWord)
     {
-      for (string)
+      char[] markerChar = marker.ToCharArray();
+      char[] testChar = testWord.ToCharArray();
 
-      for (var x=0; x<word1.Length; x++)
-        if (otherword[x].Contains(word1[x])){
-          _anagrams.Add(x);
-        } else {
-          _not.Add(x);
-        }
-        Console.WriteLine(newWord + ",");
+      foreach (testChar in _userInputs
+        foreach (testChar[i] in _userInputs)
+          if (testChar[i].Contains(marketChar[i])
+            _anagrams.Add(i);
+          } else {
+            _not.Add(i);
+          }
+          return testChar.Join();
+    }
+
+    public static void ClearAll()
+    {
+      _userInputs.Clear();
+    }
+    public static AnagramMatch Find(string lookUpID)
+    {
+      return _userInputs[lookUpID-2];
     }
 
   }
